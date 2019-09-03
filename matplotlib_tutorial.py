@@ -3,7 +3,7 @@
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 #to pass the datapoints
-plt.plot([],[],label="", marker='',s=, linewidth=)
+plt.plot([],[],label="sample plot", marker='o',s=2, linewidth=1.5)
 #arg1= all y datapoints 
 #arg2= all x datapoints
 #label these datapoints
