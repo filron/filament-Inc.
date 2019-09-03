@@ -1,5 +1,3 @@
-#https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/
-
 #Seaborn data visualisation
 #type of plots
     '''
@@ -20,9 +18,10 @@
     
     
     '''
-#histogram/distribution plot
 
+#Importing libraries
 import seaborn as sns
+import matplotlib.pyplot as plt
 
 
 #load tips dataset built in sns
@@ -196,7 +195,11 @@ sns.despine(left=True, bottom=Fals)
 #To change figure size
 plt.figure(figsize=(12,3)) 
 sns.set_context('poster', font_scale=2)
-
+#To customise grid styles of a seaborn graph
+sns.set_style(style='darkgrid')
+#To reset all configurations to seaborn default
+sns.set()
+sns.set_context("paper")
 
 #Notes
 '''
@@ -223,7 +226,3 @@ to seperate the plottings based on diffrent plotrs instead of colors use col='' 
 
 
 '''
-
-sns.set_style(style='darkgrid')
-sns.set()
-sns.set_context("paper")
