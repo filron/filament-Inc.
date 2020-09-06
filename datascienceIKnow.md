@@ -42,28 +42,27 @@
 
 
 ## Modules/Libs
-1. Numpy
-2. Pandas
-3. Matplotlib
-4. Seaborn
-5. Scikit-Learn
-6. Plotly
 
+Numpy
+Pandas
+Matplotlib
+Seaborn
+Scikit-Learn
+Plotly
 
-
-* pip
-* dlib
-* cmake
-* opencv-python
-* imutils
-* itertools
-* scipy
-* merkletools
-* tensorflow
-* keras
-* pytorch
-* gluoncv
-* mxnet
+pip
+dlib
+cmake
+opencv-python
+imutils
+itertools
+scipy
+merkletools
+tensorflow
+keras
+pytorch
+gluoncv
+mxnet
 
 
 ## Opencv
@@ -184,127 +183,6 @@ stream line plot
 barb plot
 polar scatter plot
 
-
-## Mathemathics for Machine Learning
-
-1. Linear Algebra
-	* PCA (principal component analysis)
-	* SVD (single value decomposition)
-	* Eigen decomposition of a matrix
-	* LU decomposition
-	* QR decomposition
-	* Symmetric matrices
-	* orthogonalization and orthonormalization of matrix
-	* matrix operations
-	* projection
-	* eigen vectors and eigen values
-	* vector spaces and norms
-	
-2. Calculus
-    * Multivariate calculus
-	* basic differential and integral calculus
-	* partial derivatives
-	* vector value functions
-	* directional gradient
-	* hessian, jacobian, lagrange, laplacian distributions
-	* optimization theory
-	
-3. Statistics and Probablity
-    * probablity theory
-	* combinatorics
-	* probablity rules and axioms
-	* bayes theorrem
-	* random variables
-	* variance and expectations
-	* conditional and observed probablities
-	* conditional and disjoint distributions
-	* standard deviation
-	* bernoullis, binomial, multinomial, uniform, gaussian probablity distribution
-	* moment generating functions
-	* MLE (maximum likelihood functions)
-	* MAP (maximum aposteriori estimation)
-	* priori and posterior
-	* sampling methods
-	
-4. Algorithm and complex optimization
-	* binary tree
-	* hashing techniques
-	* heap
-	* stack
-	* dynamic programming, divide and conquer, greedy algorithms
-	* randomized and sublinear algorithms
-	* graph, gradient, stochastic descents
-	* primal dual methods
-  
-5. Reference
-	
-  * [towards data science (the mathemathics of machine learning) Wale Akinfaderin](https://towardsdatascience.com/the-mathematics-of-machine-learning-894f046c568)
-	* 
-
-## OTHERS
-* mean and variance are corupted by outliers
-* median is not corupted by outliers
-* median can only be corupted if half the data points are outliers
-* variance is squared difference
-* 
-
-## Questions
-what is data point/observation?
-what are outliers and how to fix them?
-when to use histogram?, box ans whiskers?, pair plot, 
-what is EDA (Exploratory data analysis)?
-how to visualize multi dimentional data?
-how to visualize 2 dimentional data?
-what is IQR (Inter Quartile Range)?
-what is PDF (Probablity Density Function) and PMF (Probablity Mass Function)?
-how to visualize univariate and multi variate data?
-how to load datasets?
-how to handle missing data?
-how to select best feature from model?
-what is correlation?
-how to visualize correlated data?
-how to encode and decode data from one type to another?
-what is one hot encoder?
-what is catergorical data?
-how to handle missing categorical data?
-what is numerical data?
-how to handle missing numerical data?
-how to rescale data for modeling?
-what is data augmentation?
-what is the correct amount of data?
-how is data distributed as training data and testing data?
-what is validation data?
-what are the parameters on which a models performance is validated?
-is accuracy a good performance indicator?
-is precission a good performance indicator?
-is speed a good performance indicator?
-what ETL (Extract, Transform, Load) and where is it used?
-what is feature extraction and data cleaning/
-why is there a need of data cleaning?
-can model automatically clean data and apply algorithms on data?
-which is best model to select for any project?
-what is cross validation?
-what is k fold cross validation?
-why is preprocessing of data important?
-what benefits can we get by doing EDA?
-how to deploy models?
-what is MSE (Mean Square Error)?
-what is cross entropy?
-is cross entropy better than MSE?
-what are the types on ml models?
-what are descriptive models and predective models?
-what are statistical methods/models?
-what is usuall percentage split for train and test data?
-how to estimate the performance of a ml model?
-what is ml modelling life cycle?
-what are the stages of ml modelling lifecycle?
-what is label encodeing?
-what is standardization and normalization? and where are they used?
-what is feature scaling and why is it needed?
-what is least square?
-
-
-
 ## Simple Linear Regression
 
 Y = c+mX
@@ -377,9 +255,6 @@ lin_reg_poly.fit(x_poly, y_train)
 
 ```
 
-## Normal distribution (Gaussian distribution)
-has continous PDF (Probablity Density Function)
-
 ## Support Vector Machines
 
 ## Decision Tree and Random Forest Tree
@@ -427,6 +302,10 @@ x_train, y_train, x_test, y_test = train_test_split(X,Y, test_size=0.40, random_
 
 to put all features values  on same scale so no other feature are domninated by features with large scale
 
+Normalization : putting each observation on a relative scale between the value [0 & 1]
+	(value of observation)/(sum of all observations)
+	
+Standardization : rescaling data so it has no zero (0) mean and unit variance
 ```python
 #standardization
 #Scale train features first then test features
@@ -435,7 +314,127 @@ sc_x=StandardScalar()
 x_train=sc_x.fit_transform(x_train)
 x_test=sc_x.transf
 ```
+## *Other
+### Normal distribution (Gaussian distribution)
+has continous PDF (Probablity Density Function)
+# *Appendix A: Questions
+* what is data point/observation?
+* what are outliers and how to fix them?
+* when to use histogram?, box ans whiskers?, pair plot, 
+* what is EDA (Exploratory data analysis)?
+* how to visualize multi dimentional data?
+* how to visualize 2 dimentional data?
+* what is IQR (Inter Quartile Range)?
+* what is PDF (Probablity Density Function) and PMF (Probablity Mass Function)?
+* how to visualize univariate and multi variate data?
+* how to load datasets?
+* how to handle missing data?
+* how to select best feature from model?
+* what is correlation?
+* how to visualize correlated data?
+* how to encode and decode data from one type to another?
+* what is one hot encoder?
+* what is catergorical data?
+* how to handle missing categorical data?
+* what is numerical data?
+* how to handle missing numerical data?
+* how to rescale data for modeling?
+* what is data augmentation?
+* what is the correct amount of data?
+* how is data distributed as training data and testing data?
+* what is validation data?
+* what are the parameters on which a models performance is validated?
+* is accuracy a good performance indicator?
+* is precission a good performance indicator?
+* is speed a good performance indicator?
+* what ETL (Extract, Transform, Load) and where is it used?
+* what is feature extraction and data cleaning/
+* why is there a need of data cleaning?
+* can model automatically clean data and apply algorithms on data?
+* which is best model to select for any project?
+* what is cross validation?
+* what is k fold cross validation?
+* why is preprocessing of data important?
+* what benefits can we get by doing EDA?
+* how to deploy models?
+* what is MSE (Mean Square Error)?
+* what is cross entropy?
+* is cross entropy better than MSE?
+* what are the types on ml models?
+* what are descriptive models and predective models?
+* what are statistical methods/models?
+* what is usuall percentage split for train and test data?
+* how to estimate the performance of a ml model?
+* what is ml modelling life cycle?
+* what are the stages of ml modelling lifecycle?
+* what is label encodeing?
+* what is standardization and normalization? and where are they used?
+* what is feature scaling and why is it needed?
+* what is least square?
 
+# *Appendix B: Others / Tricks / Tips /
+
+* mean and variance are corupted by outliers
+* median is not corupted by outliers
+* median can only be corupted if half the data points are outliers
+* variance is squared difference
+* 
+
+# *Appendix C: Mathemathics for Machine Learning
+
+1. Linear Algebra
+	* PCA (principal component analysis)
+	* SVD (single value decomposition)
+	* Eigen decomposition of a matrix
+	* LU decomposition
+	* QR decomposition
+	* Symmetric matrices
+	* orthogonalization and orthonormalization of matrix
+	* matrix operations
+	* projection
+	* eigen vectors and eigen values
+	* vector spaces and norms
+	
+2. Calculus
+    * Multivariate calculus
+	* basic differential and integral calculus
+	* partial derivatives
+	* vector value functions
+	* directional gradient
+	* hessian, jacobian, lagrange, laplacian distributions
+	* optimization theory
+	
+3. Statistics and Probablity
+    * probablity theory
+	* combinatorics
+	* probablity rules and axioms
+	* bayes theorrem
+	* random variables
+	* variance and expectations
+	* conditional and observed probablities
+	* conditional and disjoint distributions
+	* standard deviation
+	* bernoullis, binomial, multinomial, uniform, gaussian probablity distribution
+	* moment generating functions
+	* MLE (maximum likelihood functions)
+	* MAP (maximum aposteriori estimation)
+	* priori and posterior
+	* sampling methods
+	
+4. Algorithm and complex optimization
+	* binary tree
+	* hashing techniques
+	* heap
+	* stack
+	* dynamic programming, divide and conquer, greedy algorithms
+	* randomized and sublinear algorithms
+	* graph, gradient, stochastic descents
+	* primal dual methods
+  
+# *References
+	
+  * [towards data science (the mathemathics of machine learning) Wale Akinfaderin](https://towardsdatascience.com/the-mathematics-of-machine-learning-894f046c568)
+	* 
 
 
 
