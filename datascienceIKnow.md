@@ -1,5 +1,46 @@
 # Data Analysis / Data Science / Mahine Learning / Deep Learning
 
+#### Index
+1. Modules/Libs
+	* Numpy
+	* Pandas
+	* Matplotlib
+	* Sklearn (scikit-learn)
+2. Visualization
+	* Histogram
+	* Scatter plot
+		* 2D Scatter plot
+		* 3D Scatter plot
+	* Pair plot
+	* Box and Whisker plot
+	* Joint plot
+	* 
+	* 
+	* 
+3. Regression
+	* Simple Linear Regression
+	* Multi Linear Regression
+	* Polynomial Regression
+	* Logistic Regression
+	* Ridge Regression
+	* Lasso Regression
+	* Ordinary Least Square Regression
+4. SVM
+	* Non Kernelized SVM
+	* Kernelized SVM
+5. KNN
+6. Trees
+
+*Appendix A: Most asked Questions*
+
+*Appendix B: Facts / Tips / Tricks*
+
+*Appendix C: Mathemathics for Machine Learning*
+
+*REFERENCES*
+
+
+
 ## Modules/Libs
 1. Numpy
 2. Pandas
@@ -115,7 +156,7 @@ true negetives
   * Logistic Regression
   * ridge Regression
   * Lasso Regression
-
+  * Ordinary Learst Square Regression (OLS)
 
 ## Toy Dataset
 
