@@ -171,67 +171,196 @@ polar scatter plot
 * 
 
 ## Questions
-1. what is data point/observation?
-2. what are outliers and how to fix them?
-1. when to use histogram?, box ans whiskers?, pair plot, 
-2. what is EDA (Exploratory data analysis)?
-3. how to visualize multi dimentional data?
-4. how to visualize 2 dimentional data?
-5. what is IQR (Inter Quartile Range)?
-6. what is PDF (Probablity Density Function) and PMF (Probablity Mass Function)?
-7. how to visualize univariate and multi variate data?
-8. 
-
-///////////////////////////////////////////////////////////////////////////////
-//
-///////////////////////////////////////////////////////////////////////////////
-
-
-///////////////////////////////////////////////////////////////////////////////
-//
-///////////////////////////////////////////////////////////////////////////////
-
-
-///////////////////////////////////////////////////////////////////////////////
-//
-///////////////////////////////////////////////////////////////////////////////
-
-
-///////////////////////////////////////////////////////////////////////////////
-//
-///////////////////////////////////////////////////////////////////////////////
-
-
-///////////////////////////////////////////////////////////////////////////////
-//
-///////////////////////////////////////////////////////////////////////////////
-
-
-///////////////////////////////////////////////////////////////////////////////
-//
-///////////////////////////////////////////////////////////////////////////////
-
-
-///////////////////////////////////////////////////////////////////////////////
-//
-///////////////////////////////////////////////////////////////////////////////
-
-
-///////////////////////////////////////////////////////////////////////////////
-//
-///////////////////////////////////////////////////////////////////////////////
-
-
-///////////////////////////////////////////////////////////////////////////////
-//
-///////////////////////////////////////////////////////////////////////////////
-
-
-///////////////////////////////////////////////////////////////////////////////
-//
-///////////////////////////////////////////////////////////////////////////////
+what is data point/observation?
+what are outliers and how to fix them?
+when to use histogram?, box ans whiskers?, pair plot, 
+what is EDA (Exploratory data analysis)?
+how to visualize multi dimentional data?
+how to visualize 2 dimentional data?
+what is IQR (Inter Quartile Range)?
+what is PDF (Probablity Density Function) and PMF (Probablity Mass Function)?
+how to visualize univariate and multi variate data?
+how to load datasets?
+how to handle missing data?
+how to select best feature from model?
+what is correlation?
+how to visualize correlated data?
+how to encode and decode data from one type to another?
+what is one hot encoder?
+what is catergorical data?
+how to handle missing categorical data?
+what is numerical data?
+how to handle missing numerical data?
+how to rescale data for modeling?
+what is data augmentation?
+what is the correct amount of data?
+how is data distributed as training data and testing data?
+what is validation data?
+what are the parameters on which a models performance is validated?
+is accuracy a good performance indicator?
+is precission a good performance indicator?
+is speed a good performance indicator?
+what ETL (Extract, Transform, Load) and where is it used?
+what is feature extraction and data cleaning/
+why is there a need of data cleaning?
+can model automatically clean data and apply algorithms on data?
+which is best model to select for any project?
+what is cross validation?
+what is k fold cross validation?
+why is preprocessing of data important?
+what benefits can we get by doing EDA?
+how to deploy models?
+what is MSE (Mean Square Error)?
+what is cross entropy?
+is cross entropy better than MSE?
+what are the types on ml models?
+what are descriptive models and predective models?
+what are statistical methods/models?
+what is usuall percentage split for train and test data?
+how to estimate the performance of a ml model?
+what is ml modelling life cycle?
+what are the stages of ml modelling lifecycle?
+what is label encodeing?
+what is standardization and normalization? and where are they used?
+what is feature scaling and why is it needed?
+what is least square?
 
 
-///////////////////////////////////////////////////////////////////////////////
-//
-///////////////////////////////////////////////////////////////////////////////
+
+## Simple Linear Regression
+
+Y = c+mX
+
+Y : dependent variable
+X : independent variable
+c : constant (yintercept) ie. point where line cuts the dependent variable (Y)
+m : slope of the line (rise/run)
+	X2-X1/Y2-Y1
+
+Note:
+1. Y is a scalar value of dependent variable
+2. X is an Array/Vector of independent variable
+3. m is a scalar constant value (slope of a linear model is constant)
+4. c is a scalar constant value
+
+## Multi Linear Regression
+
+Assumption of Linear Regression
+* Linearity of data
+* multivariate normality
+* Independence of error
+* Lack of multi collinearity
+
+
+Y = c+m1X1+m2X2+m3X3+...+mnXn
+
+Y : dependent variable
+X : independent variable
+c : constant (yintercept) ie. point where line cuts the dependent variable (Y)
+m : slope of the line (rise/run)
+	X2-X1/Y2-Y1
+
+
+```python
+from sklearn.linear_model import LinearRegression
+reg=LinearRegression()
+reg.fit(x_train, y_train)
+ypred=reg.predict(x_test)
+plt.scatter(x_train, y_train, color='red')
+plt.plot(x_train, reg.predict(x_train), color='blue')
+```
+
+Note:
+1. do not add all dummy variable in model (this is called Dummy variable trap)
+if you have `n` dummy variables, use `n-1` variables in model
+i.e. for 9 dummy variables use 9-1 (8) variables
+2. unlike Simple Linear Regression where X was an Array/Vector, in Multi Linear Regression, X is a Matrix or 2 or more independent variables and Y is an Array/Vector of dependent variable
+1. X is a Matrix of 2 or more independent variables
+2. Y is an Array/Vector of dependent variables
+3. 
+
+## Polynomial Regression
+
+Y = c+m1X^1+m2X^2+m3X^3+...+mnX^n
+# incomplete: to be completed
+
+Note:
+1. Polynomial Regression is a special case of Multi Linear Regression
+
+```python
+from sklearn.Linear_model import LinearRegression
+lin_reg=LinearRegression()
+lin_reg.fit(x_train, y_train)
+from sklearn.preprocessing import PolynomialFeatures
+poly_reg=PolynomialFeatures(degree=2)
+x_poly=poly_reg.fit_transform(x_train)
+lin_reg_pol=LinearRegression()
+lin_reg_poly.fit(x_poly, y_train)
+
+```
+
+## Normal distribution (Gaussian distribution)
+has continous PDF (Probablity Density Function)
+
+## Support Vector Machines
+
+## Decision Tree and Random Forest Tree
+
+## K Nearest Neighbour
+
+## Label encoder in scikit-learn
+
+```python
+#label encoder
+from sklearn.preprocessing import LabelEncoder
+labelencoder=LabelEncoder()
+X[:,0]=labelencoder.fit_transform(X[:,0])
+```
+
+## One Hot Encoder in Scikit-learn
+
+```python
+#one hot encoder : 
+from sklearn.preprocessing import OneHotEncoder
+onehotencoder=OneHotEncoder(categorical_feature=[0])
+X = onehorencoder.fit_transform(X).toarray()
+```
+
+## Imputer in scikit-learn
+
+```python
+#imputer : fixing missing values with mean
+from sklearn.preprocessing import Imputer
+imputer = Imputer(missing_values='NaN', stratergy='mean', axis=0)
+# X[:, 1:3] are the features to apply
+imputer=imputer.fit(X[:, 1:3])
+X[:, 1:3]=imputer.transform(X[:, 1:3])
+```
+
+## train-test-split in scikit-learn
+
+```python
+#train test split : spliting data fot training, testing and evaluating model
+from sklearn.cross_validation import train_test_split
+x_train, y_train, x_test, y_test = train_test_split(X,Y, test_size=0.40, random_state=True)
+```
+
+## Feature scaling (Normalization and Standardization)
+
+to put all features values  on same scale so no other feature are domninated by features with large scale
+
+```python
+#standardization
+#Scale train features first then test features
+from sklearn.preprocessing import StandardScalar
+sc_x=StandardScalar()
+x_train=sc_x.fit_transform(x_train)
+x_test=sc_x.transf
+```
+
+
+
+
+
+
+
