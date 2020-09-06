@@ -371,6 +371,9 @@ has continous PDF (Probablity Density Function)
 * what is standardization and normalization? and where are they used?
 * what is feature scaling and why is it needed?
 * what is least square?
+* how to encode categorical data into numerical data?
+* what is a predictor, feature, column?
+* what is datapoint, row, observation?
 
 # *Appendix B: Others / Tricks / Tips /
 
