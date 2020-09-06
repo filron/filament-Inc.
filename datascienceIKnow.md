@@ -261,6 +261,35 @@ lin_reg_poly.fit(x_poly, y_train)
 
 ## K Nearest Neighbour
 
+```python
+#imports
+from sklearn.dataset import load_breast_cancer
+from sklearn.neighbors import KNeignborsClassifier
+from sklearn.preprocessing import train_test_split
+import mglearn
+
+#load dataset
+cancer = load_breast_cancer()
+print(cancer.DESCR)
+print(cancer.feature)
+print(cancer.feature_names)
+print(cancer.target_names)
+print(cancer.data)
+print(cancer.data.shape)
+
+#fiting model
+mglearn.plot.plot_knn_classification(n_neighbors=3)
+x_train, y_train, x_test, y_test = train_test_split(cancer.data, cancer.taget,
+	stratify=cancer.target, random_state=42)
+knn=KNeignborsClassifier()
+knn.fit(x_train, y_train)
+knn.score(x_train, y_train)
+knn.score(x_test, y_test)
+# change the value of n_neighbors and % of train_test_split for better results
+
+```
+
+
 ## Label encoder in scikit-learn
 
 ```python
